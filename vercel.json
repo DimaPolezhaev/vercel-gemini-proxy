@@ -2,18 +2,21 @@
   "version": 2,
   "builds": [
     {
-      "src": "api/generate.js",
-      "use": "@vercel/node",
-      "config": {
-        "regions": ["iad1"]
-      }
+      "src": "app.py",
+      "use": "@vercel/python"
     }
   ],
   "routes": [
     {
       "src": "/generate",
-      "dest": "api/generate.js",
-      "methods": ["POST", "OPTIONS"]
+      "methods": ["POST", "OPTIONS"],
+      "dest": "app.py"
+    },
+    {
+      "src": "/",
+      "methods": ["GET"],
+      "dest": "app.py"
     }
-  ]
+  ],
+  "regions": ["iad1"]
 }
