@@ -1,7 +1,13 @@
 {
   "version": 2,
   "builds": [
-    { "src": "api/generate.js", "use": "@vercel/node" }
+    {
+      "src": "api/generate.js",
+      "use": "@vercel/node",
+      "config": {
+        "regions": ["iad1"]
+      }
+    }
   ],
   "routes": [
     {
